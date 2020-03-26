@@ -22,16 +22,21 @@
       class App extends React.Component {
           state = { name: 'Kainy', age: 26 }
 
-          handleClick(e) {
-              console.log(e.)
+          handleClick = (e) => {
+            this.setState({ name: 'AJ', age: 29 })
           }
+
+          handleMouseOver(e) {
+            console.log(e.screenX, e.screenY)
+          }
+
           render() {
               return (
                   <div className="app-content">
                       <h1>Hey, ninjas</h1>
-                      <p>My name is { this.state.name } and I am { this.state.age }</p>
+                      <p>Hi i'm { this.state.name } and I am { this.state.age }</p>
                       <button onClick={this.handleClick}>Click</button>
-                      <button onClick={this.handleClick}>Click</button>
+                      <button onMouseOver={this.handleMouseOver}>Hover me</button>
                   </div>
               )
           }
